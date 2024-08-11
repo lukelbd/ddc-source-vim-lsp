@@ -1,7 +1,5 @@
 import {
-  BaseSource,
-  DdcGatherItems,
-  Item as DdcItem,
+  BaseSource, DdcGatherItems, Item as DdcItem,
 } from "https://deno.land/x/ddc_vim@v4.3.1/types.ts";
 
 import {
