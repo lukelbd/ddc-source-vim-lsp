@@ -1,60 +1,24 @@
-# ddc-source-vim-lsp
+Vim-lsp completion
+==================
 
-vim-lsp for ddc.vim.
+This plugin uses [vim-lsp](https://github.com/prabirshrestha/vim-lsp) to provide insert and command-mode
+popup completion with lsp identifiers (requires [denops.vim](https://github.com/vim-denops/denops.vim) and [ddc.vim](https://github.com/Shougo/ddc.vim)).
 
-- ddc.vim : v3.2.0
+To configure add the following to your `~/.vimrc`:
 
-## Required
-
-### denops.vim
-
-https://github.com/vim-denops/denops.vim
-
-### ddc.vim
-
-https://github.com/Shougo/ddc.vim
-
-### vim-lsp
-
-https://github.com/prabirshrestha/vim-lsp
-
-## Recommended
-
-### vim-lsp-settings
-
-https://github.com/mattn/vim-lsp-settings
-
-## Configuration
-
-```
-    e.g.
-
-    call ddc#custom#patch_global('sources', ['vim-lsp'])
-    call ddc#custom#patch_global('sourceOptions', #{
-        \   vim-lsp: #{
-        \     matchers: ['matcher_head'],
-        \     mark: 'lsp',
-        \   },
-        \ })
-
-    " if you want to use the unsupported CompleteProvider Server,
-    " set true by'ignoreCompleteProvider'.
-    call ddc#custom#patch_filetype(['css'], #{
-       \   sourceParams: #{
-       \     vim-lsp: #{
-       \       ignoreCompleteProvider: v:true,
-       \     },
-       \   },
-       \ })
+```vim
+call ddc#custom#patch_global('sources', ['vim-lsp'])
+call ddc#custom#patch_global('sourceOptions', {'vim-lsp': {'matchers': ['matcher_head'], 'mark': 'lsp'}})
 ```
 
-ddc.vim remove duplicated keyword by default. If you want to list up both of
-them, please add `'dup': v:true` .
+Installation
+============
 
-## Screenshots
+Install with your favorite [plugin manager](https://vi.stackexchange.com/q/388/8084).
+I highly recommend the [vim-plug](https://github.com/junegunn/vim-plug) manager.
+To install with vim-plug, add
 
-<img src="https://user-images.githubusercontent.com/212602/131840821-e3a94117-2eb9-44b9-8da6-3b14ed15b893.png"><br>
-
-## Author
-
-KUDO Shunsuke (skudo_xx)
+```
+Plug 'lukelbd/ddc-source-vim-lsp'
+```
+to your `~/.vimrc`.
